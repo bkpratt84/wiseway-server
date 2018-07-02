@@ -1,0 +1,12 @@
+{
+    "alias": "api.thewisewaycounseling.com",
+    "env": {
+        "SendGrid_API": "@send-grid-api",
+        "Email": "@email",
+        "Firebase_Key": "@firebase-key",
+        "Firebase_AuthDomain": "@firebase-auth-domain",
+        "Firebase_ProjectID": "@firebase-project-id",
+        "Origin": "@origin",
+        "Secret": "@secret"
+      }
+}

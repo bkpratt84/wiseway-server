@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+npm-debug.log
+now-secrets.json
+yarn-error.log
+.vscode/*
