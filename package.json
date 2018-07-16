@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "author": "BKPRATT84@gmail.com",
   "license": "MIT",
+  "scripts": {
+    "scale-down": "now scale api.thewisewaycounseling.com 0 --token=$NOW_TOKEN",
+    "deploy": "now --token=$NOW_TOKEN --npm",
+    "alias": "now alias rm api.thewisewaycounseling.com --yes --token=$NOW_TOKEN && now alias --token=$NOW_TOKEN",
+    "scale-up": "now scale api.thewisewaycounseling.com 1 --token=$NOW_TOKEN",
+    "unalias": "now rm wiseway --safe --yes --token=$NOW_TOKEN"
+  },
   "dependencies": {
     "@sendgrid/mail": "^6.3.1",
     "bcrypt": "^2.0.1",

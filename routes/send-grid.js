@@ -34,12 +34,6 @@ router.post('/send', function(req, res) {
             status: false
         })
     })
-
-
-    res.status(200).json({
-        title: 'Success',
-        status: true
-    })
 })
 
 module.exports = router
