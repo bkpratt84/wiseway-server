@@ -1,24 +1,23 @@
-var express = require('express')
-var bodyParser = require('body-parser')
-var morgan = require('morgan')
+require('now-env')
 
-var jwt = require('jsonwebtoken')
+const express = require('express')
+const bodyParser = require('body-parser')
+//const morgan = require('morgan')
 
-var appRoutes = require('./routes/app')
-var userRoutes = require('./routes/user')
-var sendGridRoutes = require('./routes/send-grid')
+//const admin = require('firebase-admin')
 
-var app = express()
+const appRoutes = require('./routes/app')
+const sendGridRoutes = require('./routes/send-grid')
 
-var port = process.env.PORT || 3000
+const app = express()
 
-app.set('secretKey', process.env.secret)
+const port = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.use(morgan('dev'))
+//app.use(morgan('dev'))
 
-let isDev = process.env.environment === 'production'
+let isDev = process.env.environment !== 'production'
 
 app.use(function(req, res, next) {
     let origin = null
@@ -46,7 +45,16 @@ app.use(function(req, res, next) {
     }
 });
 
-app.use('/user', userRoutes)
+// admin.initializeApp({
+//     credential: admin.credential.cert({
+//       projectId: process.env.Firebase_ProjectID,
+//       clientEmail: process.env.Firebase_ClientEmail,
+//       privateKey: process.env.Firebase_PrivateKey
+//     }),
+//     databaseURL: process.env.Firebase_DatabaseURL,
+//     storageBucket: process.env.Firebase_StorageBucket
+// })
+
 app.use('/sendgrid', sendGridRoutes)
 app.use('*', appRoutes)
 
