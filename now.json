@@ -3,13 +3,6 @@
     "env": {
         "SendGrid_API": "@send-grid-api",
         "Email": "@email",
-        "Firebase_Key": "@firebase-key",
-        "Firebase_AuthDomain": "@firebase-auth-domain",
-        "Firebase_ProjectID": "@firebase-project-id",
-        "Firebase_ClientEmail": "@firebase-client-email",
-        "Firebase_PrivateKey": "@firebase-private-key",
-        "Firebase_DatabaseURL": "@firebase-database-url",
-        "Firebase_StorageBucket": "@firebase-storage-bucket",
         "Origin": "@origin"
       }
 }
